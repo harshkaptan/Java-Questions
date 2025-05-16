@@ -1,0 +1,61 @@
+// import java.util.Scanner;
+
+// public class Main {
+//     public static void main(String[] args) {
+//         Scanner sc = new Scanner(System.in);
+
+//         // Input total marks and number of subjects
+//         System.out.print("Enter total marks: ");
+//         int total = sc.nextInt();
+
+//         System.out.print("Enter number of subjects: ");
+//         int count = sc.nextInt();
+
+//         // Call and print average and percentage
+//         System.out.println("Average = " + average(total, count));
+//         System.out.println("Percentage = " + percentage(total, count) + "%");
+
+//         sc.close();
+//     }
+
+//     static float average(int total, int count) {
+//         return (float) total / count;
+//     }
+
+//     static float percentage(int total, int count) {
+//         return ((float) total / (count * 100)) * 100;
+//     }
+// }
+
+
+import java.util.Scanner;
+
+public class AveragePercentage {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] marks = new int[6];
+        int sum = 0;
+
+        // Input 6 numbers
+        System.out.println("Enter marks for 6 subjects (out of 100):");
+        for (int i = 0; i < 6; i++) {
+            System.out.print("Enter mark " + (i + 1) + ": ");
+            marks[i] = sc.nextInt();
+            sum += marks[i];
+        }
+
+        // Calculate average
+        double average = sum / 6.0;
+
+        // Calculate percentage
+        double percentage = (sum / 600.0) * 100;
+
+        // Output results
+        System.out.println("\nTotal Marks: " + sum);
+        System.out.println("Average Marks: " + average);
+        System.out.println("Percentage: " + percentage + "%");
+        
+        sc.close();
+    }
+}
+
